@@ -60,6 +60,7 @@ h1 {
 .hidden-all-brand {
   position: relative;
   padding: 24px 0 24px 40px;
+  font-weight: 500;
 }
 .show-all-brand::before {
   content: "";
@@ -95,7 +96,7 @@ h1 {
   border: 6px #b5b6bc solid;
 }
 
-.hide-button-hidden, .show-button-hidden {
+.button-hidden {
   display: none;
 }
 
@@ -117,7 +118,7 @@ h1 {
 
 @media (min-width: 321px) and (max-width: 768px) {
   .slider-dots-list,
-  .hidden-tablet {
+  .hidden-tablet, .hidden-desktop {
     display: none;
   }
 }

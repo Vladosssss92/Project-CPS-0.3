@@ -1,21 +1,28 @@
 let buttonShow = document.querySelector(".show-all-brand");
 let buttonHidden = document.querySelector(".hidden-all-brand");
-let classRemove = document.querySelectorAll(".slider-list-item");
+let sliderItems = document.querySelectorAll(".slider-list-item");
+let classRemoveTablet = document.querySelectorAll(".tablet");
+let classRemoveDesktop = document.querySelectorAll(".desktop");
+let dotsSlider = document.querySelectorAll(".dots-list-item");
 
-buttonShow.addEventListener("click", function() {
-    for (const elem of classRemove) {
-        elem.classList.remove("hidden-tablet");
-        elem.classList.remove("hidden-desktop");
-    }
-    buttonHidden.classList.remove("hide-button-hidden");
-    buttonShow.classList.add("show-button-hidden");
-})
+buttonShow.addEventListener("click", function () {
+  for (const item of sliderItems) {
+    item.classList.remove("hidden-tablet");
+    item.classList.remove("hidden-desktop");
+  }
+  buttonHidden.classList.remove("button-hidden");
+  buttonShow.classList.add("button-hidden");
+});
 
-buttonHidden.addEventListener("click", function() {
-    for (const elem of classRemove) {
-        elem.classList.add("hidden-tablet");
-        elem.classList.add("hidden-desktop");
-    }
-    buttonHidden.classList.add("hide-button-hidden");
-    buttonShow.classList.remove("show-button-hidden");
-})
+buttonHidden.addEventListener("click", function () {
+  for (const tablet of classRemoveTablet) {
+    tablet.classList.add("hidden-tablet");
+  }
+  for (const desktop of classRemoveDesktop) {
+    desktop.classList.add("hidden-desktop");
+  }
+  buttonHidden.classList.add("button-hidden");
+  buttonShow.classList.remove("button-hidden");
+});
+
+
