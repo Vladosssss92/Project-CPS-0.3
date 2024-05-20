@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-weight: normal;
+  list-style: none;
+  font-family: TT Lakes;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  box-sizing: border-box;
+  background: #f8f8f8;
+}
+*:hover,
+*:link,
+*:active,
+*:focus,
+*:visited {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  background: linear-gradient(270deg, #ffffff 0%, #f8f8f8 98.61%);
+  padding: 15px 0 15px 15px;
+  text-transform: uppercase;
+}
+.slider-list-brands {
+  padding: 24px 15px 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.slider-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  height: 72px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  width: 224px;
+  padding: 0 16px 0 16px;
+  gap: 15px;
+  flex-grow: 1;
+}
+.slider-list-item a,
+.slider-list-item img {
+  background: #ffffff;
+}
+.list-item-link {
+  padding-top: 5px; /* какой то костыль... не придумал ничего лучше)) */
+}
+
+.show-all-brand,
+.hidden-all-brand {
+  position: relative;
+  padding: 24px 0 24px 40px;
+}
+.show-all-brand::before {
+  content: "";
+  background-image: url("../image/expand.svg");
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 15px;
+}
+
+.hidden-all-brand::before {
+  content: "";
+  background-image: url("../image/expand.svg");
+  transform: rotate(180deg);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 15px;
+}
+
+.slider-dots-list {
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.dots-list-item {
+  border: 6px #dddddd solid;
+  border-radius: 50%;
+}
+
+.dots-list-item.active {
+  border: 6px #b5b6bc solid;
+}
+
+.hide-button-hidden, .show-button-hidden {
+  display: none;
+}
+
+@media (min-width: 1px) and (max-width: 320px) {
+  .slider-list-brands {
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+  .show-all-brand,
+  .hidden-all-brand {
+    display: none;
+  }
+  .slider-list-item {
+    width: 240px;
+    min-width: 224px;
+    max-width: auto;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .slider-dots-list,
+  .hidden-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .slider-dots-list,
+  .hidden-desktop {
+    display: none;
+  }
+  .slider-list-item {
+    min-width: 240px; /* как по мне лучше это убрать, будет не по макету, */
+    max-width: 240px; /* но получится красивее, но кто я такой чтобы это решать?))*/
+  }
+  .slider-list-brands {
+    justify-content: center;
+  }
+}
