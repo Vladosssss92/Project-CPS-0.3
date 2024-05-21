@@ -26,6 +26,7 @@ h1 {
   background: linear-gradient(270deg, #ffffff 0%, #f8f8f8 98.61%);
   padding: 15px 0 15px 15px;
   text-transform: uppercase;
+  border-top: 3px #d9fff5 solid;
 }
 .slider-list-brands {
   padding: 24px 15px 0 15px;
@@ -33,6 +34,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
+  scroll-behavior: smooth;
 }
 
 .slider-list-item {
@@ -61,6 +63,7 @@ h1 {
   position: relative;
   padding: 24px 0 24px 40px;
   font-weight: 500;
+  cursor: pointer;
 }
 .show-all-brand::before {
   content: "";
@@ -90,9 +93,14 @@ h1 {
 .dots-list-item {
   border: 6px #dddddd solid;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .dots-list-item.active {
+  border: 6px #b5b6bc solid;
+}
+
+.dots-list-item:hover {
   border: 6px #b5b6bc solid;
 }
 
@@ -118,7 +126,8 @@ h1 {
 
 @media (min-width: 321px) and (max-width: 768px) {
   .slider-dots-list,
-  .hidden-tablet, .hidden-desktop {
+  .hidden-tablet,
+  .hidden-desktop {
     display: none;
   }
 }

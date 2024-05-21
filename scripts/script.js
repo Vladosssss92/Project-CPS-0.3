@@ -1,10 +1,12 @@
-let buttonShow = document.querySelector(".show-all-brand");
-let buttonHidden = document.querySelector(".hidden-all-brand");
-let sliderItems = document.querySelectorAll(".slider-list-item");
-let classRemoveTablet = document.querySelectorAll(".tablet");
-let classRemoveDesktop = document.querySelectorAll(".desktop");
-let dotsSlider = document.querySelectorAll(".dots-list-item");
+const buttonShow = document.querySelector(".show-all-brand"),
+  buttonHidden = document.querySelector(".hidden-all-brand"),
+  sliderItems = document.querySelectorAll(".slider-list-item"),
+  classRemoveTablet = document.querySelectorAll(".tablet"),
+  classRemoveDesktop = document.querySelectorAll(".desktop"),
+  dotsSlider = document.querySelectorAll(".dots-list-item"),
+  sliderList = document.querySelector(".slider-list-brands");
 
+// функция показать
 buttonShow.addEventListener("click", function () {
   for (const item of sliderItems) {
     item.classList.remove("hidden-tablet");
@@ -14,6 +16,7 @@ buttonShow.addEventListener("click", function () {
   buttonShow.classList.add("button-hidden");
 });
 
+// функция скрыть
 buttonHidden.addEventListener("click", function () {
   for (const tablet of classRemoveTablet) {
     tablet.classList.add("hidden-tablet");
@@ -24,5 +27,23 @@ buttonHidden.addEventListener("click", function () {
   buttonHidden.classList.add("button-hidden");
   buttonShow.classList.remove("button-hidden");
 });
+
+// слайдер
+for (let i = 0; i < dotsSlider.length; i++) {
+  dotsSlider[i].addEventListener("click", function () {
+    let widthElemSlider = getComputedStyle(sliderItems[1]).width,
+      gapElemsSlider = getComputedStyle(sliderList).gap;
+    sliderList.scrollLeft =
+      (+widthElemSlider.replace("px", "") + +gapElemsSlider.replace("px", "")) *
+      i;
+    if (dotsSlider[i] !== dotsSlider[i].classList.contains("active")) {
+      for (let elem of dotsSlider) {
+        elem.classList.remove("active");
+      }
+      dotsSlider[i].classList.add("active");
+    }
+  });
+}
+
 
 
