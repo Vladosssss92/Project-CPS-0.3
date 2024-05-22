@@ -111,7 +111,7 @@ h1 {
 @media (min-width: 1px) and (max-width: 320px) {
   .slider-list-brands {
     flex-wrap: nowrap;
-    overflow: scroll;
+    overflow: hidden;
   }
   .show-all-brand,
   .hidden-all-brand {

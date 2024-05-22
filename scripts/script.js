@@ -4,7 +4,9 @@ const buttonShow = document.querySelector(".show-all-brand"),
   classRemoveTablet = document.querySelectorAll(".tablet"),
   classRemoveDesktop = document.querySelectorAll(".desktop"),
   dotsSlider = document.querySelectorAll(".dots-list-item"),
-  sliderList = document.querySelector(".slider-list-brands");
+  sliderList = document.querySelector(".slider-list-brands"),
+  widthElemSlider = getComputedStyle(sliderItems[1]).width,
+  gapElemsSlider = getComputedStyle(sliderList).gap;
 
 // функция показать
 buttonShow.addEventListener("click", function () {
@@ -31,19 +33,12 @@ buttonHidden.addEventListener("click", function () {
 // слайдер
 for (let i = 0; i < dotsSlider.length; i++) {
   dotsSlider[i].addEventListener("click", function () {
-    let widthElemSlider = getComputedStyle(sliderItems[1]).width,
-      gapElemsSlider = getComputedStyle(sliderList).gap;
     sliderList.scrollLeft =
       (+widthElemSlider.replace("px", "") + +gapElemsSlider.replace("px", "")) *
       i;
-    if (dotsSlider[i] !== dotsSlider[i].classList.contains("active")) {
-      for (let elem of dotsSlider) {
-        elem.classList.remove("active");
-      }
-      dotsSlider[i].classList.add("active");
+    for (let elem of dotsSlider) {
+      elem.classList.remove("active");
     }
+    dotsSlider[i].classList.add("active");
   });
 }
-
-
-
