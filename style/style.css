@@ -21,18 +21,21 @@
   text-decoration: none;
   color: black;
 }
-
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
 h1 {
   background: linear-gradient(270deg, #ffffff 0%, #f8f8f8 98.61%);
   padding: 15px 0 15px 15px;
   text-transform: uppercase;
-  border-top: 3px #d9fff5 solid;
+  border-top: 2px #d9fff5 solid;
 }
 .slider-list-brands {
   padding: 24px 15px 0 15px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
   scroll-behavior: smooth;
 }
@@ -45,10 +48,12 @@ h1 {
   height: 72px;
   border-radius: 5px;
   border: 1px solid #eaeaea;
-  width: 224px;
+  min-width: 220px;
+  max-width: 33.33%;
+  /* width: 100%; */
   padding: 0 16px 0 16px;
   gap: 15px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 .slider-list-item a,
 .slider-list-item img {
@@ -108,7 +113,7 @@ h1 {
   display: none;
 }
 
-@media (min-width: 1px) and (max-width: 320px) {
+@media (min-width: 1px) and (max-width: 420px) {
   .slider-list-brands {
     flex-wrap: nowrap;
     overflow: hidden;
@@ -120,11 +125,10 @@ h1 {
   .slider-list-item {
     width: 240px;
     min-width: 224px;
-    max-width: auto;
   }
 }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 421px) and (max-width: 768px) {
   .slider-dots-list,
   .hidden-tablet,
   .hidden-desktop {
@@ -136,12 +140,5 @@ h1 {
   .slider-dots-list,
   .hidden-desktop {
     display: none;
-  }
-  .slider-list-item {
-    min-width: 240px; /* как по мне лучше это убрать, будет не по макету, */
-    max-width: 240px; /* но получится красивее, но кто я такой чтобы это решать?))*/
-  }
-  .slider-list-brands {
-    justify-content: center;
   }
 }
