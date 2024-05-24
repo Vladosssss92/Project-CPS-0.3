@@ -23,7 +23,8 @@
 }
 .wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin: auto 0;
 }
 h1 {
   background: linear-gradient(270deg, #ffffff 0%, #f8f8f8 98.61%);
@@ -48,19 +49,17 @@ h1 {
   height: 72px;
   border-radius: 5px;
   border: 1px solid #eaeaea;
-  min-width: 220px;
-  max-width: 33.33%;
-  /* width: 100%; */
+  min-width: 220px; /* не сделал проценты, иначе блок неравномерно сжимается из за размера картинки (бренда)*/
   padding: 0 16px 0 16px;
   gap: 15px;
-  /* flex-grow: 1; */
+
 }
 .slider-list-item a,
 .slider-list-item img {
   background: #ffffff;
 }
 .list-item-link {
-  padding-top: 5px; /* какой то костыль... не придумал ничего лучше)) */
+  padding-top: 5px; 
 }
 
 .show-all-brand,
@@ -113,7 +112,7 @@ h1 {
   display: none;
 }
 
-@media (min-width: 1px) and (max-width: 420px) {
+@media (min-width: 1px) and (max-width: 500px) {
   .slider-list-brands {
     flex-wrap: nowrap;
     overflow: hidden;
@@ -128,7 +127,7 @@ h1 {
   }
 }
 
-@media (min-width: 421px) and (max-width: 768px) {
+@media (min-width: 501px) and (max-width: 768px) {
   .slider-dots-list,
   .hidden-tablet,
   .hidden-desktop {
